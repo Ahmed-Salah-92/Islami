@@ -1,0 +1,39 @@
+flutter_native_splash:
+  # This package generates native code to customize Flutter's default white native splash screen
+  # with background color and splash image.
+  # Steps to make this work:
+  # 1. Customize the parameters below.
+  # 2. run the following command in the terminal:
+  # dart run flutter_native_splash:create
+  # or if you place this not in pubspec.yaml and not in flutter_native_splash.yaml:
+  # dart run flutter_native_splash:create -p ../your-filepath.yaml
+  # 3. voilà, done!
+
+  # NOTES:
+  # - in case you got some trouble, cleaning up flutter project might help:
+  # flutter clean ; flutter pub get
+  # - To restore Flutter's default white splash screen, run the following command in the terminal:
+  # dart run flutter_native_splash:remove
+  # or if you place this not in pubspec.yaml and not in flutter_native_splash.yaml:
+  # dart run flutter_native_splash:remove -p ../your-filepath.yaml
+
+  # IMPORTANT NOTE: These parameter do not affect the configuration of Android 12 and later, which
+  # handle splash screens differently that prior versions of Android.  Android 12 and later must be
+  # configured specifically in the android_12 section below, at the very end.
+
+  #======================================================================
+
+  background_image: "assets/images/splash_screen.png"
+  background_image_dark: "assets/images/splash_screen.png"
+
+  fullscreen: true
+
+  android_12:
+    color: "#202020"
+    color_dark: "#202020"
+    image: assets/images/splash_logo_12+.png
+    image_dark: assets/images/splash_logo_12+.png
+    branding: assets/images/splash_branding_12+.png
+    branding_dark: assets/images/splash_branding_12+.png
+
+  #======================================================================
