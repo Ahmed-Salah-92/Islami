@@ -23,17 +23,17 @@ flutter_native_splash:
 
   #======================================================================
 
-  background_image: "assets/images/splash_screen.png"
-  background_image_dark: "assets/images/splash_screen.png"
+  background_image: "assets/images/splash/splash_screen.png"
+  background_image_dark: "assets/images/splash/splash_screen.png"
 
   fullscreen: true
 
   android_12:
     color: "#202020"
     color_dark: "#202020"
-    image: assets/images/splash_logo_12+.png
-    image_dark: assets/images/splash_logo_12+.png
-    branding: assets/images/splash_branding_12+.png
-    branding_dark: assets/images/splash_branding_12+.png
+    image: assets/images/splash/splash_logo_12+.png
+    image_dark: assets/images/splash/splash_logo_12+.png
+    branding: assets/images/splash/splash_branding_12+.png
+    branding_dark: assets/images/splash/splash_branding_12+.png
 
   #======================================================================
