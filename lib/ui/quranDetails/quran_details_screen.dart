@@ -113,39 +113,40 @@ class _QuranDetailsScreenState extends State<QuranDetailsScreen> {
               ],
             ),
           ),
-          showSuraContentFormated
-              ? Expanded(
-                  child: verses2.isEmpty
-                      ? const Center(child: CircularProgressIndicator())
-                      : SingleChildScrollView(
-                          padding: EdgeInsets.symmetric(horizontal: res.w(20)),
-                          physics: const BouncingScrollPhysics(),
-                          child: Text(
-                            verses2,
-                            style: titleLarge?.copyWith(height: 2),
-                            textAlign: TextAlign.center,
-                            textDirection: TextDirection.rtl,
-                          ),
-                        ),
-                )
-              : Expanded(
-                  child: verses.isEmpty
-                      ? const Center(child: CircularProgressIndicator())
-                      : ListView.separated(
-                          padding: EdgeInsets.symmetric(horizontal: res.w(20)),
-                          shrinkWrap: true,
-                          physics: const BouncingScrollPhysics(),
-                          itemBuilder: (context, index) {
-                            return SuraContentWidget(
-                              content: verses[index],
-                              lineNum: index,
-                            );
-                          },
-                          separatorBuilder: (context, index) =>
-                              SizedBox(height: res.h(8)),
-                          itemCount: verses.length,
-                        ),
-                ),
+          if (showSuraContentFormated)
+            Expanded(
+              child: verses2.isEmpty
+                  ? const Center(child: CircularProgressIndicator())
+                  : SingleChildScrollView(
+                      padding: EdgeInsets.symmetric(horizontal: res.w(20)),
+                      physics: const BouncingScrollPhysics(),
+                      child: Text(
+                        verses2,
+                        style: titleLarge?.copyWith(height: 2),
+                        textAlign: TextAlign.center,
+                        textDirection: TextDirection.rtl,
+                      ),
+                    ),
+            )
+          else
+            Expanded(
+              child: verses.isEmpty
+                  ? const Center(child: CircularProgressIndicator())
+                  : ListView.separated(
+                      padding: EdgeInsets.symmetric(horizontal: res.w(20)),
+                      shrinkWrap: true,
+                      physics: const BouncingScrollPhysics(),
+                      itemBuilder: (context, index) {
+                        return SuraContentWidget(
+                          content: verses[index],
+                          lineNum: index,
+                        );
+                      },
+                      separatorBuilder: (context, index) =>
+                          SizedBox(height: res.h(8)),
+                      itemCount: verses.length,
+                    ),
+            ),
           Image.asset(
             AppImages.imgBottomDecoration,
             width: .infinity,

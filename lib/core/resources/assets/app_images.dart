@@ -13,4 +13,5 @@ class AppImages {
   static const imgLeftCorner = '${_images}img_left_corner.png';
   static const imgRightCorner = '${_images}img_right_corner.png';
   static const imgBottomDecoration = '${_images}img_bottom_decoration.png';
+  static const hadethCardBg = '${_images}Hadeth_card_item_bg.png';
 }
